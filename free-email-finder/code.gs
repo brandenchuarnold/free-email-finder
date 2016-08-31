@@ -1,5 +1,6 @@
 function readEmailsForFreeFood()
 {
+  GmailApp.createLabel('Free');
   var inboxThreads = GmailApp.getInboxThreads();
   for (var i = 0; i != inboxThreads.length; ++i)
   {
