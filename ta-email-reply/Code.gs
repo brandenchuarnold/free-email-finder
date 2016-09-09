@@ -18,7 +18,7 @@ function autoReply()
             && message.getBody().match(/[java|3114|help|code|script|error|partner|project|milestone]/i))
         {
           thread.markRead();
-          message.reply("I apolgize, but I am unable to provide help through email."
+          message.reply("This is an automated reply from an unmonitored inbox.\n"
                         + "Please see me during office hours below:\n\n"
                         + "M: 10:00 - 11:15\n"
                         + "M: 17:15 - 19:00\n"
