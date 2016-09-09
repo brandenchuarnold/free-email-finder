@@ -11,13 +11,19 @@ function autoReply()
       {
         var message = messages[j];
         var sender = message.getFrom();
-        // If the message is from a student
-        // and the student is asking for code help
+        // If it is a vt email
         if (sender.search('@vt.edu') != -1
+            // And not Shaffer
             && sender.search('shaffer') == -1
+            // And not Barnette
             && sender.search('barnett') == -1
-            && (message.getSubject().match(/[java|eclipse|3114|help|code|script|error|partner|project|milestone]/i)
-                || message.getBody().match(/[java|eclipse|3114|help|code|script|error|partner|project|milestone]/i)))
+            // And not from me
+            && sender.getFrom().search('brandena@vt.edu') == -1
+            // And specifically to me
+            && message.getTo().search('brandena@vt.edu') != -1
+            // And asking for help
+            && (message.getSubject().match(/[java|eclipse|3114|help|code|script|function|class|error|partner|project|milestone]/i)
+                || message.getBody().match(/[java|eclipse|3114|help|code|script|function|class|error|partner|project|milestone]/i)))
         {
           thread.markRead();
           message.reply("This is an automated reply from an unmonitored inbox.\n"
