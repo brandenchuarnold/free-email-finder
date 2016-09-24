@@ -18,7 +18,7 @@ function autoReply()
             // And not Barnette
             && sender.search('barnett') == -1
             // And not from me
-            && sender.getFrom().search('branden') == -1
+            && sender.search('branden') == -1
             // And specifically to me
             && message.getTo().search('brandena@vt.edu') != -1
             // And asking for help
