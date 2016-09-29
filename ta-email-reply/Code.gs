@@ -17,6 +17,8 @@ function autoReply()
             && sender.search('shaffer') == -1
             // And not Barnette
             && sender.search('barnett') == -1
+            // And not Allie
+            && sender.search('ahowe') == -1
             // And not from me
             && sender.search('branden') == -1
             // And specifically to me
